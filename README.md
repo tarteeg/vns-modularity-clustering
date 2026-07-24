@@ -1,2 +1,2 @@
 # vns-modularity-clustering
-An implementation of the Variable Neighborhood Search (VNS) metaheuristic for graph clustering and community detection via modularity maximization.
+An implementation of the Variable Neighborhood Search (VNS) metaheuristic for graph clustering and community detection via modularity maximization. While the original authors implemented their VNS algorithm in C++, the choice of Julia for this project is driven by its ability to deliver comparable execution performance while maintaining a readability and development speed similar to Python.
