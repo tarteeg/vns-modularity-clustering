@@ -10,6 +10,30 @@ fast       modularity-    escapes LPAm local maxima       escapes LPAm+ local ma
 baseline   aware moves    by merging communities          by random perturbations
 ```
 
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
+
+## Contents
+
+- [Academic context](#academic-context)
+- [Project status](#project-status)
+- [Mathematical background](#mathematical-background)
+  - [Notation](#notation)
+  - [1. Modularity (Newman & Girvan)](#1-modularity-newman--girvan)
+  - [2. Label Propagation Algorithm (LPA)](#2-label-propagation-algorithm-lpa)
+  - [3. Modularity-specialized Label Propagation (LPAm)](#3-modularity-specialized-label-propagation-lpam)
+  - [4. LPAm+ : LPAm with community merging](#4-lpam--lpam-with-community-merging)
+  - [5. Variable Neighborhood Search (VNS) and VNDS](#5-variable-neighborhood-search-vns-and-its-decomposition-variant-vnds)
+- [Datasets](#datasets)
+- [Results](#results)
+  - [Comparison with the literature](#comparison-with-the-literature-best-modularity-found)
+  - [Discussion](#discussion)
+- [Repository structure](#repository-structure)
+- [Getting started](#getting-started)
+- [References](#references)
+- [License](#license)
+
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
+
 ## Academic context
 
 This project is an educational replication of a scientific article proposed by Professor Daniel Aloise as supplementary reading for the course **INF8111 — Data Mining** at **Polytechnique Montréal**, during the intensive summer session of 2026.
@@ -19,6 +43,8 @@ The purpose of this repository is to reproduce and better understand the algorit
 This repository is an independent educational implementation. It is not the official implementation of the original article and is not affiliated with Polytechnique Montréal or Professor Daniel Aloise.
 
 The original authors implemented their algorithm in C++. Julia was chosen here because it offers execution speed in the same league as compiled languages while keeping the readability and development speed of Python. Moreover, my objective was to understand the mathematical concepts and algorithms behind the results of the main paper, which is why I chose the language I was most comfortable with.
+
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## Project status
 
@@ -35,7 +61,7 @@ The original authors implemented their algorithm in C++. Julia was chosen here b
 | VNDS main loop (decomposition + shaking + LPAm+) | 🚧 In progress |
 | Tuning of the MSG level parameter `l` per dataset | 🚧 In progress |
 
----
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## Mathematical background
 
@@ -194,7 +220,7 @@ return x
 
 The article uses `MAX_SIZE = 15`. The stopping condition is either a number of non-improving iterations or a CPU time limit. With this method the authors found the proven optimum on every exactly solved instance they tested, and obtained the second prize in the modularity Quality challenge of DIMACS 10.
 
----
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## Datasets
 
@@ -212,7 +238,7 @@ The nine benchmark networks come from the 10th DIMACS Implementation Challenge c
 | PGP | 10,680 | 24,316 | Giant component of the PGP web of trust |
 | Condmat2003 | 31,163 | 120,029 | Condensed matter co-authorship network |
 
----
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## Results
 
@@ -295,13 +321,15 @@ Each method was run **40 times** per dataset (seeds 1 to 40). `Q_max` is the bes
 - **Greedy vs MSG.** Both merging strategies give identical results on the five smallest graphs and nearly identical results on C. elegans and E-mail, but only MSG finishes on PGP and Condmat2003.
 - **Distance to the optimum.** LPAm+ reaches the proven optimum on Karate and College Football, and is within 0.0003 to 0.002 of it on Political Books, Jazz and Dolphins. The gap is larger on C. elegans (0.433 vs 0.453), and the averages are clearly below those reported by Liu & Murata (e.g. 0.390 vs 0.418 on Karate). These remaining gaps are precisely what the VNS stage is designed to close.
 
----
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## Repository structure
 
 ```text
 .
 ├── README.md
+├── assets/
+│   └── rainbow-line.svg                 # section divider used in this README
 ├── literature/                          # reference articles (see License)
 ├── vns_modularity_clustering.ipynb      # implementation and experiments
 └── .gitignore
@@ -313,6 +341,8 @@ The notebook is organized as follows:
 2. heuristic methods: LPA, modularity, LPAm, LPAm+ (greedy and MSG), VNS perturbations;
 3. experiments and performance summaries;
 4. references.
+
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## Getting started
 
@@ -341,7 +371,7 @@ jupyter notebook vns_modularity_clustering.ipynb
 
 Run the cells in order. The LPAm+ benchmarks on PGP and Condmat2003 are the slowest part of the notebook.
 
----
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## References
 
@@ -356,6 +386,8 @@ Run the cells in order. The LPAm+ benchmarks on PGP and Condmat2003 are the slow
 **[5]** M. E. J. Newman, *Fast algorithm for detecting community structure in networks*, Physical Review E, vol. 69, 066133, 2004.
 
 **[6]** D. A. Bader, H. Meyerhenke, P. Sanders and D. Wagner (eds.), *Graph Partitioning and Graph Clustering*, 10th DIMACS Implementation Challenge Workshop, Contemporary Mathematics 588, American Mathematical Society, 2013.
+
+<p align="center"><img src="assets/rainbow-line.svg" alt="" width="100%"></p>
 
 ## License
 
