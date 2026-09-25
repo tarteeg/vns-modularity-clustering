@@ -18,7 +18,7 @@ The purpose of this repository is to reproduce and better understand the algorit
 
 This repository is an independent educational implementation. It is not the official implementation of the original article and is not affiliated with Polytechnique Montréal or Professor Daniel Aloise.
 
-The original authors implemented their algorithm in C++. Julia was chosen here because it offers execution speed in the same league as compiled languages while keeping the readability and development speed of Python.
+The original authors implemented their algorithm in C++. Julia was chosen here because it offers execution speed in the same league as compiled languages while keeping the readability and development speed of Python. Moreover, my objective was to understand the mathematical concepts and algorithms behind the results of the main paper, which is why I chose the language I was most comfortable with.
 
 ## Project status
 
